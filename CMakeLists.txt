@@ -26,5 +26,3 @@ add_library(roboteam_networking STATIC
 
 target_include_directories(roboteam_networking PUBLIC "include")
 target_link_libraries(roboteam_networking PUBLIC roboteam_networking_utils roboteam_networking_proto)
-
-add_subdirectory(tests)
