@@ -26,6 +26,7 @@ add_library(roboteam_networking STATIC
     "src/SettingsNetworker.cpp"
     "src/WorldNetworker.cpp"
     "src/SimulationConfigurationNetworker.cpp"
+    "src/AIDataNetworker.cpp"
 )
 
 target_include_directories(roboteam_networking PUBLIC "include")
@@ -56,3 +57,7 @@ add_executable(roboteam_networking_systest
 target_link_libraries(roboteam_networking_systest
         PRIVATE roboteam_networking)
 
+add_executable(roboteam_networking_interface_systest
+        system_tests/AIDataListener.cpp)
+target_link_libraries(roboteam_networking_interface_systest
+        PRIVATE roboteam_networking)
