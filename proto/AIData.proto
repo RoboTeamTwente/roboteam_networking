@@ -2,7 +2,31 @@ syntax = "proto3";
 
 package proto;
 
+message STPStatus {
+    int32 robot_id = 1;
+
+    string role_name = 2;
+    string role_status = 3;
+    string tactic_name = 4;
+    string tactic_status = 5;
+    string skill_name = 6;
+    string skill_status = 7;
+}
+
+message Point {
+    double x = 1;
+    double y = 2;
+}
+
+message RobotPath {
+    int32 robot_id = 1;
+    repeated Point points = 2;
+}
+
 message AIData {
     string current_play = 1;
     repeated string all_plays = 2;
+
+    repeated STPStatus stp_status = 3;
+    repeated RobotPath robot_paths = 4;
 }
