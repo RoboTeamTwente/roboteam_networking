@@ -7,7 +7,7 @@ set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake_modules")
 include(GetDependencies)
 
 # Create make file for all theproto files as target 'roboteam_networking_proto'
-find_package(Protobuf 3.9.1 REQUIRED)
+find_package(Protobuf 3.6.1 REQUIRED)
 add_subdirectory(proto)
 
 add_library(roboteam_networking_utils STATIC
