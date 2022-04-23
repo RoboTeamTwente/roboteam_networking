@@ -35,24 +35,3 @@ target_link_libraries(roboteam_networking PUBLIC
     roboteam_utils
 )
 target_compile_options(roboteam_networking PRIVATE "${COMPILER_FLAGS}")
-
-# -- TESTS --
-
-add_executable(roboteam_networking_tests
-        tests/LoopsTest.cpp
-        tests/SharedChannelsTest.cpp)
-
-target_link_libraries(roboteam_networking_tests
-        PRIVATE roboteam_networking
-        PRIVATE GTest::gtest
-        PRIVATE GTest::gtest_main
-)
-
-gtest_discover_tests(roboteam_networking_tests)
-
-add_executable(roboteam_networking_systest
-        system_tests/SendRobotCommands.cpp)
-
-target_link_libraries(roboteam_networking_systest
-        PRIVATE roboteam_networking)
-
