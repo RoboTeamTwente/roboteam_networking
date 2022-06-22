@@ -26,7 +26,7 @@ add_library(roboteam_networking STATIC
     "src/SettingsNetworker.cpp"
     "src/WorldNetworker.cpp"
     "src/SimulationConfigurationNetworker.cpp"
-        include/utils/Pair.hpp)
+    "include/utils/Pair.hpp")
 
 target_include_directories(roboteam_networking PUBLIC "include")
 target_link_libraries(roboteam_networking PUBLIC
@@ -50,9 +50,11 @@ target_link_libraries(roboteam_networking_tests
 
 gtest_discover_tests(roboteam_networking_tests)
 
-add_executable(roboteam_networking_systest
-        system_tests/SendRobotCommands.cpp)
+add_executable(roboteam_networking_systest system_tests/SendRobotCommands.cpp)
 
-target_link_libraries(roboteam_networking_systest
-        PRIVATE roboteam_networking)
+target_link_libraries(roboteam_networking_systest PRIVATE roboteam_networking)
+
+add_executable(roboteam_networking_systest_ball system_tests/TestBallSpeedSetup.cpp)
+
+target_link_libraries(roboteam_networking_systest_ball PRIVATE roboteam_networking)
 
