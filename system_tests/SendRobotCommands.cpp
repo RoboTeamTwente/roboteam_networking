@@ -44,13 +44,13 @@ void onFeedback(const rtt::RobotsFeedback& robotsFeedback) {
 }
 
 void onWorld(const proto::State& world) {
-    for (const auto& robot : world.last_seen_world().yellowfeedback()) {
-        // std::cout << "Robot " << robot.id() << " of team yellow has " << (robot.hasball() ? "" : "not ") << "the ball" << std::endl;
-    }
-
-    for (const auto& robot : world.last_seen_world().bluefeedback()) {
-        // std::cout << "Robot " << robot.id() << " of team blue has " << (robot.hasball() ? "" : "not ") << "the ball" << std::endl;
-    }
+//    for (const auto& robot : world.last_seen_world().yellowfeedback()) {
+//        // std::cout << "Robot " << robot.id() << " of team yellow has " << (robot.hasball() ? "" : "not ") << "the ball" << std::endl;
+//    }
+//
+//    for (const auto& robot : world.last_seen_world().bluefeedback()) {
+//        // std::cout << "Robot " << robot.id() << " of team blue has " << (robot.hasball() ? "" : "not ") << "the ball" << std::endl;
+//    }
 }
 
 int main() {
