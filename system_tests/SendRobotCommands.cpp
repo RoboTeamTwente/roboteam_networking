@@ -37,20 +37,20 @@ void onFeedback(const rtt::RobotsFeedback& robotsFeedback) {
         int id = feedback.id;
         bool xSensCalibrated = feedback.xSensIsCalibrated;
         bool ballsensorworking = feedback.ballSensorIsWorking;
-        bool hasBall = feedback.hasBall;
+        bool hasBall = true; // feedback.hasBall;
 
         std::cout << " - Robot " << id << " has " << (hasBall ? "" : "not ") << "the ball" << std::endl;
     }
 }
 
 void onWorld(const proto::State& world) {
-    for (const auto& robot : world.last_seen_world().yellowfeedback()) {
+    // for (const auto& robot : world.last_seen_world().yellowfeedback()) {
         // std::cout << "Robot " << robot.id() << " of team yellow has " << (robot.hasball() ? "" : "not ") << "the ball" << std::endl;
-    }
+    // }
 
-    for (const auto& robot : world.last_seen_world().bluefeedback()) {
+    // for (const auto& robot : world.last_seen_world().bluefeedback()) {
         // std::cout << "Robot " << robot.id() << " of team blue has " << (robot.hasball() ? "" : "not ") << "the ball" << std::endl;
-    }
+    // }
 }
 
 int main() {

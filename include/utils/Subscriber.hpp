@@ -1,7 +1,5 @@
 #pragma once
 
-#include <google/protobuf/message.h>
-
 #include <exception>
 #include <functional>
 #include <memory>
